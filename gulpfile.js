@@ -20,6 +20,6 @@ exports.sass = compSass;
 exports.Js = compJs;
 
 exports.watch = function () {
-    gulp.watch('./source/styles/*.scss', gulp.series(compSass));
-    gulp.watch('./source/js/*.js', gulp.series(compJs));
+    gulp.watch('./src/scss/*.scss', gulp.series(compSass));
+    gulp.watch('./src/js/*.js', gulp.series(compJs));
 }
