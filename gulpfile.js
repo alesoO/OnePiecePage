@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const uglify = require('gulp-uglify');
+const { parallel } = require('gulp');
 
 function compJs() {
     return gulp.src('./src/js/*.js')
@@ -18,6 +19,7 @@ function compSass() {
 
 exports.sass = compSass;
 exports.Js = compJs;
+exports.build = parallel(compSass, compJs);
 
 exports.watch = function () {
     gulp.watch('./src/scss/*.scss', gulp.series(compSass));
